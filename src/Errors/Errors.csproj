@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <Configurations>Debug;Release;</Configurations>
+        <Platforms>AnyCPU</Platforms>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>konnta0.Errors</PackageId>
+        <PackageVersion>0.0.1</PackageVersion>
+        <Authors>konnta0</Authors>
+        <PackageProjectUrl>https://github.com/konnta0/Errors</PackageProjectUrl>
+    </PropertyGroup>
+
+</Project>
