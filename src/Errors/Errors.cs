@@ -15,7 +15,7 @@ namespace konnta0.Exceptions
             return New(new Exception(message));
         }
 
-        private static IErrors New(Exception e)
+        public static IErrors New(Exception e)
         {
             return new Errors(e);
         }

@@ -1,14 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
-        <Configurations>Debug;Release;</Configurations>
+        <TargetFrameworks>net5.0;netcoreapp3.1;netstandard2.0;netstandard2.1</TargetFrameworks>
+        <Configurations>Debug;Release</Configurations>
         <Platforms>AnyCPU</Platforms>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>konnta0.Errors</PackageId>
-        <PackageVersion>0.0.1</PackageVersion>
+        <PackageVersion>0.0.3</PackageVersion>
         <Authors>konnta0</Authors>
         <PackageProjectUrl>https://github.com/konnta0/Errors</PackageProjectUrl>
+        <LangVersion>8</LangVersion>
+        <PackOnBuild>true</PackOnBuild>
+        <Copyright>konnta0</Copyright>
+        <Owners>konnta0</Owners>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+      <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
 </Project>
