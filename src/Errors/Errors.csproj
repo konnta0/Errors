@@ -13,6 +13,7 @@
         <PackOnBuild>true</PackOnBuild>
         <Copyright>konnta0</Copyright>
         <Owners>konnta0</Owners>
+        <RepositoryUrl>https://github.com/konnta0/Errors</RepositoryUrl>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
