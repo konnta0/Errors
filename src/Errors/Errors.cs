@@ -84,9 +84,61 @@ namespace konnta0.Exceptions
                 return New(e);
             }
 
-            return null;
+            return Nothing();
         }
 
+        public static async ValueTask<IErrors> TryValueTask(ValueTask<IErrors> task)
+        {
+            if (task == default) return Nothing();
+
+            try
+            {
+                var error = await task;
+                if (IsOccurred(error)) return error;
+            }
+            catch (Exception e)
+            {
+                return New(e);
+            }
+
+            return Nothing();
+        }
+
+        public static async ValueTask<(T, IErrors)> TryValueTask<T>(ValueTask<(T, IErrors)> task)
+        {
+            if (task == default) return (default, Nothing());
+
+            T result;
+            try
+            {
+                var (r, error) = await task;
+                if (error != null) return (default, error);
+                result = r;
+            }
+            catch (Exception e)
+            {
+                return (default, New(e));
+            }
+
+            return (result, Nothing());
+        }
+
+        public static async ValueTask<IErrors> ValueTryTask(ValueTask task)
+        {
+            if (task == default) return Nothing();
+
+            try
+            {
+                await task;
+            }
+            catch (Exception e)
+            {
+                return New(e);
+            }
+
+            return null;
+        }        
+        
         public static IErrors Try(Action action)
         {
             if (action is null) return Nothing();
