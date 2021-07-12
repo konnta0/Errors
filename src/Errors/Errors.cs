@@ -87,6 +87,7 @@ namespace konnta0.Exceptions
             return Nothing();
         }
 
+#if !UNUSE_VALUE_TASK
         public static async ValueTask<IErrors> TryValueTask(ValueTask<IErrors> task)
         {
             if (task == default) return Nothing();
@@ -139,6 +140,7 @@ namespace konnta0.Exceptions
             return null;
         }        
         
+#endif
         public static IErrors Try(Action action)
         {
             if (action is null) return Nothing();
