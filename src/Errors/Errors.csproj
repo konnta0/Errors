@@ -16,10 +16,14 @@
         <RepositoryUrl>https://github.com/konnta0/Errors</RepositoryUrl>
         <Title>Errors</Title>
         <Description>C# Error(Exception) handler</Description>
-        <PackageLicenseUrl>https://github.com/konnta0/Errors/blob/main/LICENSE</PackageLicenseUrl>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
       <WarningLevel>4</WarningLevel>
     </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="../../LICENSE"/>
+    </ItemGroup>
 </Project>
