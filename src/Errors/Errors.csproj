@@ -6,7 +6,6 @@
         <Platforms>AnyCPU</Platforms>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>konnta0.Errors</PackageId>
-        <PackageVersion>0.1.0</PackageVersion>
         <Authors>konnta0</Authors>
         <PackageProjectUrl>https://github.com/konnta0/Errors</PackageProjectUrl>
         <LangVersion>8</LangVersion>
