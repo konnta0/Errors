@@ -157,6 +157,23 @@ namespace konnta0.Exceptions
             return null;
         }
 
+        public static (T, IErrors) Try<T>(Func<T> func)
+        {
+            if (func is null) return (default, Nothing());
+
+            T ret = default;
+            try
+            {
+                ret = func();
+            }
+            catch (Exception e)
+            {
+                return (default, New(e));
+            }
+
+            return (ret, Nothing());
+        }
+        
         public Exception Exception { get; }
 
         public bool Is<T>() where T : Exception
