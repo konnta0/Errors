@@ -10,6 +10,11 @@ namespace konnta0.Exceptions
             Exception = e;
         }
 
+        public override string ToString()
+        {
+            return Exception?.ToString();
+        }
+
         public static IErrors New(string message)
         {
             return New(new Exception(message));
