@@ -178,6 +178,30 @@ namespace konnta0.Exceptions
 
             return (ret, Nothing());
         }
+
+        public static (T, IErrors) Try<T>(Func<(T, IErrors)> func)
+        {
+            if (func is null) return (default, Nothing());
+
+            T ret = default;
+            try
+            {
+                var (r, errors) = func();
+                if (IsOccurred(errors))
+                {
+                    return (default, errors);
+                }
+
+                ret = r;
+            }
+            catch (Exception e)
+            {
+                return (default, New(e));
+            }
+
+            return (ret, Nothing());
+        }
+        
         
         public Exception Exception { get; }
 
